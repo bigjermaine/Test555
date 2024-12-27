@@ -37,6 +37,7 @@
 		D0BB75462D1EDB60000DEB01 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB75452D1EDB60000DEB01 /* Recipe.swift */; };
 		D0BB75482D1EDE4D000DEB01 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB75472D1EDE4D000DEB01 /* RecipesViewModel.swift */; };
 		D0BB754A2D1EDEBA000DEB01 /* RecipeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB75492D1EDEBA000DEB01 /* RecipeRow.swift */; };
+		D0BB754C2D1EE73E000DEB01 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB754B2D1EE73E000DEB01 /* FavoritesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		D0BB75452D1EDB60000DEB01 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D0BB75472D1EDE4D000DEB01 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		D0BB75492D1EDEBA000DEB01 /* RecipeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRow.swift; sourceTree = "<group>"; };
+		D0BB754B2D1EE73E000DEB01 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		FF01769EF292A2445ACA278E /* Pods-Test555.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test555.release.xcconfig"; path = "Target Support Files/Pods-Test555/Pods-Test555.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 			children = (
 				D0B2893B2D1EA57800714753 /* FirebaseManager.swift */,
 				D0BB75422D1EDA21000DEB01 /* ApiManager.swift */,
+				D0BB754B2D1EE73E000DEB01 /* FavoritesManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				D0B289312D1E985400714753 /* LoginView.swift in Sources */,
 				D0B2893C2D1EA57800714753 /* FirebaseManager.swift in Sources */,
 				D0B289322D1E985400714753 /* SignUpView.swift in Sources */,
+				D0BB754C2D1EE73E000DEB01 /* FavoritesManager.swift in Sources */,
 				D0B289332D1E985400714753 /* RecipeDetailView.swift in Sources */,
 				D0BB75482D1EDE4D000DEB01 /* RecipesViewModel.swift in Sources */,
 				D0B289342D1E985400714753 /* HomeView.swift in Sources */,

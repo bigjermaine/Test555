@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import SwiftUI
 
 struct RecipeRow: View {
     let recipe: Recipe
+    @State private var isFavorite: Bool
+
+    init(recipe: Recipe) {
+        self.recipe = recipe
+        self._isFavorite = State(initialValue: FavoritesManager.shared.isFavorite(recipe.id))
+    }
 
     var body: some View {
         HStack {
@@ -27,6 +34,28 @@ struct RecipeRow: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
+
+            Spacer()
+
+            Button(action: {
+                toggleFavorite()
+            }) {
+                Image(systemName: isFavorite ? "heart.fill" : "heart")
+                    .foregroundColor(isFavorite ? .red : .gray)
+            }
+            .buttonStyle(PlainButtonStyle())
         }
     }
+
+    private func toggleFavorite() {
+        if isFavorite {
+            FavoritesManager.shared.removeFavorite(recipe.id)
+        } else {
+            FavoritesManager.shared.saveFavorite(recipe.id)
+        }
+        isFavorite.toggle()
+    }
+}
+#Preview {
+    RecipeRow(recipe: Recipe(id: 1, name: "Test", ingredients: [], instructions: [], prepTimeMinutes: 0, cookTimeMinutes: 0, servings: 0, difficulty: "", cuisine: "", caloriesPerServing: 0, tags: [], userId: 0, image: "", rating: 0, reviewCount: 0))
 }
