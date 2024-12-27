@@ -33,16 +33,21 @@ class RegisterViewModel: ObservableObject {
     private let firebaseManager = FirebaseManager.shared
         private var currentUserId: String?
     init() {
-          fetchUserProfile()
+        Task{
+           await fetchUserProfile()
+        }
       }
     @MainActor
     func registerUser()  {
         isLoading = true
         Task{
             do {
-                let returnedUser =   try await FirebaseManager.shared.createUser(email: email, password: password)
+                let data =   try await FirebaseManager.shared.createUser(email: email, password: password)
                 isRegistrationSuccessful = true
                 isLoading = false
+                if !data.email.isEmpty {
+                    updateProfile()
+                }
             }catch let error {
                 isLoading = false
                 showAlert = true
@@ -50,10 +55,6 @@ class RegisterViewModel: ObservableObject {
              
             }
         }
-    }
-    @MainActor
-    func verifyOTP() async {
-    
     }
     
     @MainActor
@@ -66,10 +67,6 @@ class RegisterViewModel: ObservableObject {
             errorMessage = error.localizedDescription
         }
     }
-    @MainActor
-    func resendOTP() async {
-
-    }
     
     @MainActor
     func loginUser()  {
@@ -79,6 +76,7 @@ class RegisterViewModel: ObservableObject {
                 print(returnedUser)
                 isRegistrationSuccessful = true
                 isLoading = false
+                
             }catch let error {
                 isRegistrationSuccessful = true
                 isLoading = false
@@ -88,7 +86,7 @@ class RegisterViewModel: ObservableObject {
         }
       }
     
-    // Fetch the current user's profile from Firestore
+      @MainActor
         func fetchUserProfile() {
             guard let user = Auth.auth().currentUser else {
                 errorMessage = "User is not logged in"
@@ -123,7 +121,7 @@ class RegisterViewModel: ObservableObject {
             }.resume()
         }
         
-        // Update user profile (name, email, profile image)
+        @MainActor
         func updateProfile() {
             guard let user = Auth.auth().currentUser else {
                 errorMessage = "User is not logged in"
@@ -133,14 +131,12 @@ class RegisterViewModel: ObservableObject {
             isLoading = true
             var updatedData: [String: Any] = ["name": name, "email": email]
             
-            // Upload profile image if new image data is provided
             if let imageData = imageData {
                 Task {
                     do {
                         let imageUrl = try await firebaseManager.uploadProfileImage(userId: user.uid, imageData: imageData)
                         updatedData["profileImageUrl"] = imageUrl
                         
-                        // Update Firestore with new data
                         try await firebaseManager.updateUserProfile(userId: user.uid, data: updatedData)
                         isLoading = false
                     } catch {
@@ -149,11 +145,11 @@ class RegisterViewModel: ObservableObject {
                     }
                 }
             } else {
-                // Update Firestore without image
                 Task {
                     do {
                         try await firebaseManager.updateUserProfile(userId: user.uid, data: updatedData)
                         isLoading = false
+                        errorMessage = ""
                     } catch {
                         errorMessage = error.localizedDescription
                         isLoading = false
