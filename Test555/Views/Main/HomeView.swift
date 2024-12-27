@@ -9,37 +9,48 @@ import SwiftUI
 
 struct HomeView: View {
  
-        @StateObject private var viewModel = RecipesViewModel()
-
+    @EnvironmentObject  var viewModel:RecipesViewModel
+    @EnvironmentObject var nav:MoreNavigationManager
         var body: some View {
             NavigationView {
-                Group {
-                    if viewModel.isLoading {
-                        ProgressView("Loading Recipes...")
-                    } else if let errorMessage = viewModel.errorMessage {
-                        Text(errorMessage)
-                            .foregroundColor(.red)
-                            .multilineTextAlignment(.center)
-                    } else {
-                        List(viewModel.recipes) { recipe in
-                            RecipeRow(recipe: recipe)
+                ZStack{
+                    Group {
+                        if viewModel.isLoading {
+                            ProgressView("Loading Recipes...")
+                        } else if let errorMessage = viewModel.errorMessage {
+                            Text(errorMessage)
+                                .foregroundColor(.red)
+                                .multilineTextAlignment(.center)
+                        } else {
+                            List(viewModel.recipes) { recipe in
+                                NavigationLink(destination: RecipeDetailView(recipeId: recipe.id)) {
+                                RecipeRow(recipe: recipe)
+                                        .onTapGesture {
+                                            viewModel.recipeId = recipe.id
+                                            
+                                        }
+                                    }
+                                   
+                            }
                         }
                     }
-                }
-                .onAppear{
-                    Task {
-                        await viewModel.fetchRecipes()
+                    .onAppear{
+                        Task {
+                            await viewModel.fetchRecipes()
+                        }
                     }
+                    .navigationTitle("Recipes")
+                    .navigationBarBackButtonHidden(true)
                 }
-                .navigationTitle("Recipes")
-                .navigationBarBackButtonHidden()
             }
-            
+            .navigationBarBackButtonHidden(true)
         }
     
 
 }
-
+let previewViewModel = RecipesViewModel()
 #Preview {
     HomeView()
+        .environmentObject(navPreview)
+        .environmentObject(previewViewModel)
 }

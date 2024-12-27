@@ -13,6 +13,7 @@ struct CreateAccountView: View {
     @State private var userName: String = ""
     @StateObject private var nav = MoreNavigationManager()
     @StateObject private var registerVM  = RegisterViewModel()
+    @StateObject private var viewModel = RecipesViewModel()
     var body: some View {
         NavigationStack(path: $nav.path) {
             ZStack{
@@ -127,6 +128,7 @@ struct CreateAccountView: View {
                 case.mainView:
                     Tabbar()
                         .environmentObject(nav)
+                        .environmentObject(viewModel)
                         .environmentObject(registerVM)
                 default:
                     EmptyView()

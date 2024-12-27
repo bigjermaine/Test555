@@ -15,7 +15,7 @@
 		D0B289302D1E985400714753 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B2891D2D1E985400714753 /* RegisterViewModel.swift */; };
 		D0B289312D1E985400714753 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B2891F2D1E985400714753 /* LoginView.swift */; };
 		D0B289322D1E985400714753 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B289202D1E985400714753 /* SignUpView.swift */; };
-		D0B289332D1E985400714753 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B289222D1E985400714753 /* HomeDetailView.swift */; };
+		D0B289332D1E985400714753 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B289222D1E985400714753 /* RecipeDetailView.swift */; };
 		D0B289342D1E985400714753 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B289232D1E985400714753 /* HomeView.swift */; };
 		D0B289352D1E985400714753 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B289242D1E985400714753 /* ProfileView.swift */; };
 		D0B289362D1E985400714753 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B289252D1E985400714753 /* Tabbar.swift */; };
@@ -49,7 +49,7 @@
 		D0B2891D2D1E985400714753 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		D0B2891F2D1E985400714753 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D0B289202D1E985400714753 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		D0B289222D1E985400714753 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
+		D0B289222D1E985400714753 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		D0B289232D1E985400714753 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D0B289242D1E985400714753 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D0B289252D1E985400714753 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		D0B289262D1E985400714753 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				D0B289222D1E985400714753 /* HomeDetailView.swift */,
+				D0B289222D1E985400714753 /* RecipeDetailView.swift */,
 				D0B289232D1E985400714753 /* HomeView.swift */,
 				D0B289242D1E985400714753 /* ProfileView.swift */,
 				D0B289252D1E985400714753 /* Tabbar.swift */,
@@ -346,7 +346,7 @@
 				D0B289312D1E985400714753 /* LoginView.swift in Sources */,
 				D0B2893C2D1EA57800714753 /* FirebaseManager.swift in Sources */,
 				D0B289322D1E985400714753 /* SignUpView.swift in Sources */,
-				D0B289332D1E985400714753 /* HomeDetailView.swift in Sources */,
+				D0B289332D1E985400714753 /* RecipeDetailView.swift in Sources */,
 				D0BB75482D1EDE4D000DEB01 /* RecipesViewModel.swift in Sources */,
 				D0B289342D1E985400714753 /* HomeView.swift in Sources */,
 				D0BB75462D1EDB60000DEB01 /* Recipe.swift in Sources */,

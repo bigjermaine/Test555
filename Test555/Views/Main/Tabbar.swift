@@ -11,10 +11,12 @@ import SwiftUI
 struct Tabbar: View {
     @EnvironmentObject var nav:MoreNavigationManager
     @EnvironmentObject private var registerVM:RegisterViewModel
+    @EnvironmentObject private var viewModel:RecipesViewModel
     var body: some View {
         TabView {
             HomeView()
                 .environmentObject(nav)
+                .environmentObject(viewModel)
                 .environmentObject(registerVM)
                 .tabItem {
                     Label("Home", systemImage: "house")
@@ -25,8 +27,9 @@ struct Tabbar: View {
                     Label("Profile", systemImage: "person.crop.circle")
                 }
             
-                .navigationBarBackButtonHidden()
+         .navigationBarBackButtonHidden()
         }
+        .navigationBarBackButtonHidden(true)
        
     }
 }

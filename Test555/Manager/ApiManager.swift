@@ -33,5 +33,15 @@ class ApiManager {
         // Return the decoded response
         return recipesResponse
     }
+    
+    
+    func fetchRecipeById(id: Int) async throws -> Recipe {
+        let urlString = "https://dummyjson.com/recipes/\(id)"
+        guard let url = URL(string: urlString) else {
+            throw URLError(.badURL)
+        }
+        let (data, _) = try await URLSession.shared.data(from: url)
+        return try JSONDecoder().decode(Recipe.self, from: data)
+    }
 }
 
