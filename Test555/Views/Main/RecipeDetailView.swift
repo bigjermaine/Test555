@@ -80,7 +80,7 @@ struct RecipeDetailView: View {
             
         }
         .navigationTitle("Recipe Details")
-        onAppear{
+        .onAppear{
             Task {
                 await viewModel.fetchRecipe(by: recipeId)
             }

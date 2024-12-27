@@ -43,6 +43,7 @@ class MoreNavigationManager: ObservableObject {
         case registration
         case mainView
         case password
+        case detail
     }
     
    
@@ -65,6 +66,8 @@ class MoreNavigationManager: ObservableObject {
         case .mainView:
             updateValidation(success: true)
         case .password:
+            updateValidation(success: true)
+        case .detail:
             updateValidation(success: true)
         }
         path.append(item)

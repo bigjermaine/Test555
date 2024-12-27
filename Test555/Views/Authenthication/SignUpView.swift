@@ -130,6 +130,11 @@ struct CreateAccountView: View {
                         .environmentObject(nav)
                         .environmentObject(viewModel)
                         .environmentObject(registerVM)
+                case.detail:
+                    RecipeDetailView(recipeId: 1)
+                        .environmentObject(nav)
+                        .environmentObject(viewModel)
+                        .environmentObject(registerVM)
                 default:
                     EmptyView()
                 }
