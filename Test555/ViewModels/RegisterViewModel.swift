@@ -31,6 +31,8 @@ class RegisterViewModel: ObservableObject {
     @Published var isOTPVerified: Bool = false // For OTP verification status
     @Published var isLoginSuccessful: Bool = false
     private let firebaseManager = FirebaseManager.shared
+    @Published var location: String = "Fetching location..."
+    private var locationManager = LocationManager()
         private var currentUserId: String?
     init() {
         Task{
@@ -161,4 +163,11 @@ class RegisterViewModel: ObservableObject {
         errorMessage = message
         showAlert = true
     }
+    func updateLocation() {
+            if let loc = locationManager.currentLocation {
+                location = "Lat: \(loc.coordinate.latitude), Long: \(loc.coordinate.longitude)"
+            } else if let error = locationManager.locationError {
+                location = "Error: \(error.localizedDescription)"
+            }
+        }
 }

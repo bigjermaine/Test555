@@ -55,6 +55,11 @@ struct ProfileView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.horizontal)
                 
+                Text(viewModel.location)
+                               .font(.subheadline)
+                               .foregroundColor(.gray)
+                               .padding()
+                
                 // Update Button
                 Button(action: {
                     viewModel.updateProfile()
@@ -81,6 +86,7 @@ struct ProfileView: View {
         }
         .onAppear {
             viewModel.fetchUserProfile()
+            viewModel.updateLocation()
         }
         .navigationBarBackButtonHidden(true)
     }
