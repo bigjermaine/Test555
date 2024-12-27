@@ -13,7 +13,7 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject private var viewModel:RegisterViewModel
     @State private var isImagePickerPresented: Bool = false
-    
+    @State private var rotationAngle: Double = 0
     var body: some View {
         VStack {
             if viewModel.isLoading {
@@ -29,6 +29,12 @@ struct ProfileView: View {
                             .scaledToFill()
                             .frame(width: 150, height: 150)
                             .clipShape(Circle())
+                            .rotationEffect(.degrees(rotationAngle)) // Apply rotation effect
+                            .onAppear {
+                                withAnimation(.linear(duration: 5).repeatForever(autoreverses: false)) {
+                                    rotationAngle += 360
+                                }
+                            }
                     } else {
                         Image(systemName: "person.circle.fill")
                             .resizable()
