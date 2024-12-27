@@ -38,6 +38,7 @@
 		D0BB75482D1EDE4D000DEB01 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB75472D1EDE4D000DEB01 /* RecipesViewModel.swift */; };
 		D0BB754A2D1EDEBA000DEB01 /* RecipeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB75492D1EDEBA000DEB01 /* RecipeRow.swift */; };
 		D0BB754C2D1EE73E000DEB01 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB754B2D1EE73E000DEB01 /* FavoritesManager.swift */; };
+		D0BB754E2D1EE816000DEB01 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB754D2D1EE816000DEB01 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		D0BB75472D1EDE4D000DEB01 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		D0BB75492D1EDEBA000DEB01 /* RecipeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRow.swift; sourceTree = "<group>"; };
 		D0BB754B2D1EE73E000DEB01 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
+		D0BB754D2D1EE816000DEB01 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		FF01769EF292A2445ACA278E /* Pods-Test555.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test555.release.xcconfig"; path = "Target Support Files/Pods-Test555/Pods-Test555.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B289222D1E985400714753 /* RecipeDetailView.swift */,
+				D0BB754D2D1EE816000DEB01 /* ImagePicker.swift */,
 				D0B289232D1E985400714753 /* HomeView.swift */,
 				D0B289242D1E985400714753 /* ProfileView.swift */,
 				D0B289252D1E985400714753 /* Tabbar.swift */,
@@ -349,6 +352,7 @@
 				D0B289312D1E985400714753 /* LoginView.swift in Sources */,
 				D0B2893C2D1EA57800714753 /* FirebaseManager.swift in Sources */,
 				D0B289322D1E985400714753 /* SignUpView.swift in Sources */,
+				D0BB754E2D1EE816000DEB01 /* ImagePicker.swift in Sources */,
 				D0BB754C2D1EE73E000DEB01 /* FavoritesManager.swift in Sources */,
 				D0B289332D1E985400714753 /* RecipeDetailView.swift in Sources */,
 				D0BB75482D1EDE4D000DEB01 /* RecipesViewModel.swift in Sources */,

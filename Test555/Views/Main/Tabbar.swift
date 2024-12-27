@@ -23,6 +23,9 @@ struct Tabbar: View {
                 }
 
             ProfileView()
+                .environmentObject(nav)
+                .environmentObject(viewModel)
+                .environmentObject(registerVM)
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }
